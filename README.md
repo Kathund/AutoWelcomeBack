@@ -8,8 +8,7 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 `< >` = Required arguments, `[ ]` = Optional arguments
 
-- `/autowb toggle` - Toggles on or off the module
-- `/autowb status` - Shows the status of the module
+- `/autowb` - Open the GUI
 
 ## Change Log
 
