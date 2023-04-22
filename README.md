@@ -40,7 +40,5 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 ## To-Do List
 
-- [ ] Add more emojis
 - [ ] Add more settings
 - [ ] Add more info to the GUI
-- [ ] Convert to mvp++ emojis
