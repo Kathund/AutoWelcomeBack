@@ -1,0 +1,9 @@
+
+[settings]
+
+	[settings.general]
+		"mvp++" = false
+		rank_gifting = false
+		welcome_back_message = "{wave} Welcome Back {username}! {heart}"
+		toggle = true
+

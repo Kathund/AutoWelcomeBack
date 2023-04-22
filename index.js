@@ -1,4 +1,5 @@
 // Made by Kathund#2004
+import * as helperFunctions from "./helperFunctions.js"
 import Settings from "./settings";
 const config = Settings
 
@@ -12,6 +13,6 @@ register("chat", function (message, event) {
   const name = message.substring(2);
   if (config.welcomeBackToggle === "false") return;
   setTimeout(() => {
-    ChatLib.command(`gc ${(config.welcomeBackMessage).replaceAll('{username}', name).replaceAll('{heart}', '❤').replaceAll('{arrow}', '➜').replaceAll('{peace}', '✌').replaceAll('{star}', '✯').replaceAll('{yes}', '✔').replaceAll('{no}', '✖').replaceAll('{star2}', '✪').replaceAll('{wave}', '( ﾟ◡ﾟ)/').replaceAll('{boop}', 'Boop!')}`);
+    ChatLib.command(`gc ${helperFunctions.emojis(config.welcomeBackMessage, name)}`);
   }, 1000);
 }).setChatCriteria("&2Guild > &r${message} &r&ejoined.&r");
