@@ -13,6 +13,12 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 ## Change Log
 
+### v1.1.1 - Small Update
+
+- Added MVP++ Emojis
+- Added Rank Gifting Emojis
+- Fixed a bug where the config wouldnt save
+
 ### v1.1.0 - GUI Update
 
 - Removed `/autowb toggle` command
