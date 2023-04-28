@@ -7,7 +7,7 @@ import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, } from 'Vig
         return categories.indexOf(a.name) - categories.indexOf(b.name);
     },
     getSubcategoryComparator: () => (a, b) => {
-        const subcategories = ["General", "MVP++", "Rank Gifting", "Info", "Credits"];
+        const subcategories = ["General", "MVP++", "Rank Gifting", "Info", "Other Projects", "Credits"];
         return subcategories.indexOf(a.getValue()[0].attributesExt.subcategory) -
             subcategories.indexOf(b.getValue()[0].attributesExt.subcategory);
     },
@@ -413,6 +413,17 @@ class Settings {
         placeholder: " "
     })
     creditsVersion() { };
+
+    @ButtonProperty({
+        name: "&d&lKath Addons",
+        description: `A ChatTriggers module that is designed for hypixel skyblock. It has QOL fetures read the features list for more info.`,
+        category: "Extra Info",
+        subcategory: "Other Projects",
+        placeholder: "IMPORT"
+    })
+    importKathAddons() {
+        ChatLib.command(`ct reload`);
+    };
 
     @ButtonProperty({
         name: "&d&lUdderly_cool (Kathund#2004)",
