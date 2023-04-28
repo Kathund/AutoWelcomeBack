@@ -13,6 +13,10 @@ register("chat", function (message, event) {
   const name = message.substring(2);
   if (config.welcomeBackToggle === "false") return;
   setTimeout(() => {
-    ChatLib.command(`gc ${helperFunctions.emojis(config.welcomeBackMessage, name)}`);
+    if (name.toLowerCase() === config.customUser1Name.toLowerCase()) {
+      ChatLib.command(`gc ${helperFunctions.emojis(config.customUser1Message, name)}`);
+    } else {
+      ChatLib.command(`gc ${helperFunctions.emojis(config.welcomeBackMessage, name)}`);
+    }
   }, 1000);
 }).setChatCriteria("&2Guild > &r${message} &r&ejoined.&r");
