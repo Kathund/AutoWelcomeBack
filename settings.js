@@ -54,9 +54,14 @@ class Settings {
         description: "Shows a preview of your custom message",
         category: "Settings",
         subcategory: "General",
-        placeholder: `${helperFunctions.emojis(welcomeBackMessage, 'j')}`
+        placeholder: `Show Example In Chat`
     })
-    previewMessage() { };
+    previewMessage() {
+        helperFunctions.getUsername(Player.getUUID()).then(playerName => {
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&dUdderly_cool &ejoined.&r`);
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.welcomeBackMessage, "Udderly_cool")}&r`);
+        })
+    };
 
     // ! Emojis
 
@@ -64,7 +69,7 @@ class Settings {
         name: "&b&l{username}",
         description: "Will return the username of the player that joined",
         category: "Emojis",
-        placeholder: "Udderly_cool",
+        placeholder: Player.getName(),
         subcategory: "General"
     })
     emojisUsername() { };
@@ -217,6 +222,7 @@ class Settings {
         name: "&b&l{snail}",
         description: "Will replace the emoji with a snail emojicon",
         category: "Emojis",
+        subcategory: "MVP++",
         placeholder: "@'-'"
     })
     emojiSnail() { };
@@ -376,14 +382,16 @@ class Settings {
 
     // ! Custom Users
 
+
+
     @TextProperty({
         name: "Username",
         description: "Custom message for set user - enter the person's username (case dosent matter)",
         category: "Custom Users",
         subcategory: "User 1",
-        placeholder: 'Udderly_cool',
+        placeholder: Player.getName(),
     })
-    customUser1Name = 'coldonbottom';
+    customUser1Name = Player.getName();
 
     @TextProperty({
         name: 'Welcome Back message',
@@ -399,9 +407,14 @@ class Settings {
         description: "Shows a preview of your custom message",
         category: "Custom Users",
         subcategory: "User 1",
-        placeholder: `${helperFunctions.emojis(customUser1Message, customUser1Name)}`
+        placeholder: `Show Example In Chat`
     })
-    previewMessage() { };
+    previewMessageUser1() {
+        helperFunctions.getUsername(Player.getUUID()).then(playerName => {
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&d${this.customUser1Name} &ejoined.&r`);
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.customUser1Message, this.customUser1Name)}&r`);
+        })
+    };
 
     // ! Extra Info
 
@@ -415,8 +428,8 @@ class Settings {
     creditsVersion() { };
 
     @ButtonProperty({
-        name: "&d&lKath Addons",
-        description: `A ChatTriggers module that is designed for hypixel skyblock. It has QOL fetures read the features list for more info.`,
+        name: "&1&lKath Addons",
+        description: `A ChatTriggers module that is designed for hypixel skyblock.It has QOL fetures read the features list for more info.`,
         category: "Extra Info",
         subcategory: "Other Projects",
         placeholder: "IMPORT"
@@ -450,7 +463,9 @@ class Settings {
         subcategory: "Credits",
         placeholder: " "
     })
-    creditsGh0st() { };
+    creditsGh0st() {
+        console.log(Player.getName())
+    };
 
     constructor() {
         this.initialize(this);

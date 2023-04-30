@@ -1,4 +1,5 @@
 import Settings from "./settings";
+import axios from "../axios";
 const config = Settings
 
 export const emojis = function checkEmojies(text, username) {
@@ -83,3 +84,10 @@ export const emojis = function checkEmojies(text, username) {
     .replaceAll('{dj}', 'ヽ(⌐■_■)ノ♬')
   return text;
 }
+
+export const removeColors = function removeColors(text) {
+  const cleanText = text.replace(/§./g, "");
+  return cleanText;
+}
+
+export const getUsername = (uuid) => axios.get(`https://sessionserver.mojang.com/session/minecraft/profile/${uuid}`).then(a => a.data.name).catch(e => { console.log(e) })
