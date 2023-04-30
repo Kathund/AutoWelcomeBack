@@ -17,7 +17,7 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 - Added Support for one custom user. More Slots will come soon
 - Added a Preview of the welcome message in the GUI
 - Reorganized some GUI elements
-- Added my other projects to the GUI under the extrea info section
+- Added my other projects to the GUI under the extra info section
 
 ### v1.1.1 - Small Update
 
