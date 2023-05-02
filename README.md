@@ -54,5 +54,4 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 ## To-Do List
 
-- [ ] Add more settings
-- [ ] Add more info to the GUI
+- [ ] Support for friends
