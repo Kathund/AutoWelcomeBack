@@ -10,7 +10,7 @@ if (config.welcomeBackToggle !== true && config.welcomeBackToggle !== false) {
 register("command", () => config.openGUI()).setName("autowb");
 
 register("chat", function (message, event) {
-  const name = message.substring(2);
+  var name = message.substring(2);
   if (config.welcomeBackToggle === "false") return;
   setTimeout(() => {
     if (name.toLowerCase() === config.customUser1Name.toLowerCase()) {

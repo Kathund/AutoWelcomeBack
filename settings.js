@@ -1,7 +1,7 @@
 import * as helperFunctions from "./helperFunctions.js"
 let currentVersion = JSON.parse(FileLib.read("AutoWelcomeBack", "metadata.json")).version
 import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, } from 'Vigilance';
-@Vigilant('AutoWelcomeBack', 'Auto Welcome Back BETA', {
+@Vigilant('AutoWelcomeBack', 'Auto Welcome Back', {
     getCategoryComparator: () => (a, b) => {
         const categories = ['Settings', 'Emojis', 'Custom Users', 'Extra Info'];
         return categories.indexOf(a.name) - categories.indexOf(b.name);
@@ -463,9 +463,7 @@ class Settings {
         subcategory: "Credits",
         placeholder: " "
     })
-    creditsGh0st() {
-        console.log(Player.getName())
-    };
+    creditsGh0st() { };
 
     constructor() {
         this.initialize(this);

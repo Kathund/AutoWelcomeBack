@@ -1,8 +1,10 @@
 # Auto Welcome Back - Kathund#2004
 
+[Chattrigger Module](https://www.chattriggers.com/modules/v/KathAddons)
+
 ## Description
 
-A Simple Chat triggers module that alows you to welcome guild members back when they join
+A Simple Chat triggers module that alows you to welcome guild members back when they join and is highly customizable
 
 ## Commands
 

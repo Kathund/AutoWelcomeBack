@@ -3,8 +3,6 @@ import axios from "../axios";
 const config = Settings
 
 export const emojis = function checkEmojies(text, username) {
-  console.log(config.mvpPLUSPLUS)
-  console.log(config.rankGifting)
   if (config.mvpPLUSPLUS === true) {
     text = text.replaceAll('{star}', ':star:')
       .replaceAll('{yes}', ':yes:')
