@@ -23,10 +23,7 @@ register("chat", function (message, event) {
 
 register("chat", function (message, event) {
   var name = message.substring(2);
-  if (config.friendWelcomeBackToggle === false) return;
-    if (name.toLowerCase() === config.customUser1Name.toLowerCase()) {
-      ChatLib.command(`gc ${helperFunctions.emojis(config.customUser1Message, name)}`);
-    } else {
-      ChatLib.command(`gc ${helperFunctions.emojis(config.welcomeBackMessage, name)}`);
-    }
+  if (config.friendToggle === false) return;
+  if (config.friendWelcomeBackMessage) { delay(2000).then(() => ChatLib.command(`w ${name} ${helperFunctions.emojis(config.friendWelcomeBackMessage, name)}`)); }
+  if (config.friendBoopToggle) { delay(2000).then(() => ChatLib.command(`boop ${name}`)); }
 }).setChatCriteria("&aFriend > &r${message} &r&ejoined.&r");

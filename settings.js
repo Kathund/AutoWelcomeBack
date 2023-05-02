@@ -68,11 +68,11 @@ class Settings {
     // !  Friends
     @SwitchProperty({
         name: "Toggle",
-        description: "Toggle overall toggle",
+        description: "Overall Toggle",
         category: "Friends",
         subcategory: "General"
     })
-    friendWelcomeBackToggle = true;
+    friendToggle = true;
 
     @SwitchProperty({
         name: "Boop",
@@ -88,7 +88,7 @@ class Settings {
         category: "Friends",
         subcategory: "General"
     })
-    friendBoopToggle = true;
+    friendWelcomeBackToggle = true;
 
     @TextProperty({
         name: 'Welcome Back message',
@@ -436,7 +436,13 @@ class Settings {
 
     // ! Custom Users
 
-
+    @ButtonProperty({
+        name: "WARNING",
+        description: "Custom users only works for guild chat ",
+        category: "Custom Users",
+        placeholder: ""
+    })
+    emojiSnail() { };
 
     @TextProperty({
         name: "Username",

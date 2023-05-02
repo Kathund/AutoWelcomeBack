@@ -16,7 +16,11 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 ### v1.3.0 - Friends Update
 
-### v1.2.1 
+- Added Friends menu in the GUI
+- Added the option to have a differnet message than guild members
+- Added the option to boop the user
+
+### v1.2.1
 
 - Fixed a bug where the module was not able to be turned off
 - Added more delay to the messages so the person joinning the server will be more likely to view the message
