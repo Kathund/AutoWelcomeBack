@@ -1,9 +1,9 @@
 {
   "name": "AutoWelcomeBack",
   "description": "Chat triggers module that alows you to welcome guild members back",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Kath",
   "helpMessage": "/autowb",
   "entry": "index.js",
-  "requires": ["Vigilance","axios"]
+  "requires": ["Vigilance", "axios", "PromiseV2"]
 }
