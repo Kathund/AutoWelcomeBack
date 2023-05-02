@@ -20,3 +20,13 @@ register("chat", function (message, event) {
     delay(2000).then(() => ChatLib.command(`gc ${helperFunctions.emojis(config.welcomeBackMessage, name)}`));
   }
 }).setChatCriteria("&2Guild > &r${message} &r&ejoined.&r");
+
+register("chat", function (message, event) {
+  var name = message.substring(2);
+  if (config.friendWelcomeBackToggle === false) return;
+    if (name.toLowerCase() === config.customUser1Name.toLowerCase()) {
+      ChatLib.command(`gc ${helperFunctions.emojis(config.customUser1Message, name)}`);
+    } else {
+      ChatLib.command(`gc ${helperFunctions.emojis(config.welcomeBackMessage, name)}`);
+    }
+}).setChatCriteria("&aFriend > &r${message} &r&ejoined.&r");

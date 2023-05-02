@@ -14,6 +14,8 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 ## Change Log
 
+### v1.3.0 - Friends Update
+
 ### v1.2.1 
 
 - Fixed a bug where the module was not able to be turned off

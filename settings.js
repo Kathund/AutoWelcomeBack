@@ -1,9 +1,9 @@
 import * as helperFunctions from "./helperFunctions.js"
 let currentVersion = JSON.parse(FileLib.read("AutoWelcomeBack", "metadata.json")).version
-import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, } from 'Vigilance';
+import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty,} from 'Vigilance';
 @Vigilant('AutoWelcomeBack', 'Auto Welcome Back', {
     getCategoryComparator: () => (a, b) => {
-        const categories = ['Settings', 'Emojis', 'Custom Users', 'Extra Info'];
+        const categories = ['Settings', 'Guild', 'Frineds', 'Emojis', 'Custom Users', 'Extra Info'];
         return categories.indexOf(a.name) - categories.indexOf(b.name);
     },
     getSubcategoryComparator: () => (a, b) => {
@@ -16,13 +16,6 @@ import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, } from 'Vig
 class Settings {
 
     // ! Settings
-    @SwitchProperty({
-        name: "Toggle",
-        description: "Toggle the guild auto welcome back on or off",
-        category: "Settings",
-        subcategory: "General"
-    })
-    welcomeBackToggle = true;
 
     @SwitchProperty({
         name: "MVP++",
@@ -40,10 +33,19 @@ class Settings {
     })
     rankGifting = false;
 
+    // ! Guild
+    @SwitchProperty({
+        name: "Toggle",
+        description: "Toggle the guild auto welcome back on or off",
+        category: "Guild",
+        subcategory: "General"
+    })
+    welcomeBackToggle = true;
+
     @TextProperty({
         name: 'Welcome Back message',
         description: 'Set the message that will be sent in chat when the user joins hypixel',
-        category: 'Settings',
+        category: 'Guild',
         subcategory: 'General',
         placeholder: '{wave} Welcome Back {username}! {heart}',
     })
@@ -52,11 +54,59 @@ class Settings {
     @ButtonProperty({
         name: "Preview",
         description: "Shows a preview of your custom message",
-        category: "Settings",
+        category: "Guild",
         subcategory: "General",
         placeholder: `Show Example In Chat`
     })
-    previewMessage() {
+    previewGuildMessage() {
+        helperFunctions.getUsername(Player.getUUID()).then(playerName => {
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&dUdderly_cool &ejoined.&r`);
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.welcomeBackMessage, "Udderly_cool")}&r`);
+        })
+    };
+
+    // !  Friends
+    @SwitchProperty({
+        name: "Toggle",
+        description: "Toggle overall toggle",
+        category: "Friends",
+        subcategory: "General"
+    })
+    friendWelcomeBackToggle = true;
+
+    @SwitchProperty({
+        name: "Boop",
+        description: "Will boop them when they join (will send after the welcome back message if its on)",
+        category: "Friends",
+        subcategory: "General"
+    })
+    friendBoopToggle = true;
+
+    @SwitchProperty({
+        name: "Message",
+        description: "Will send them a message when they join (will send before the boop message if its on)",
+        category: "Friends",
+        subcategory: "General"
+    })
+    friendBoopToggle = true;
+
+    @TextProperty({
+        name: 'Welcome Back message',
+        description: 'Set the message that will be sent in chat when the user joins hypixel',
+        category: "Friends",
+        subcategory: 'General',
+        placeholder: '{wave} Welcome Back {username}! {heart}',
+    })
+    friendWelcomeBackMessage = '{wave} Welcome Back {username}! {heart}';
+
+    @ButtonProperty({
+        name: "Preview",
+        description: "Shows a preview of your custom message",
+        category: "Friends",
+        subcategory: "General",
+        placeholder: `Show Example In Chat`
+    })
+    previewFriendsMessage() {
         helperFunctions.getUsername(Player.getUUID()).then(playerName => {
             ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&dUdderly_cool &ejoined.&r`);
             ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.welcomeBackMessage, "Udderly_cool")}&r`);
@@ -154,6 +204,8 @@ class Settings {
         subcategory: "General"
     })
     emojisBoop() { };
+
+    // ? MVP++
 
     @ButtonProperty({
         name: "&b&l{java}",
@@ -280,6 +332,8 @@ class Settings {
         placeholder: "<('O')>"
     })
     emojipuffer() { };
+
+    // ? Rank Gifting
 
     @ButtonProperty({
         name: "&b&l{sloth}",
