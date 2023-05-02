@@ -1,8 +1,10 @@
 # Auto Welcome Back - Kathund#2004
 
+[Chattrigger Module](https://www.chattriggers.com/modules/v/AutoWelcomeBack)
+
 ## Description
 
-A Simple Chat triggers module that alows you to welcome guild members back when they join
+A Simple Chat triggers module that alows you to welcome guild members back when they join and is highly customizable
 
 ## Commands
 
@@ -11,6 +13,13 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 - `/autowb` - Open the GUI
 
 ## Change Log
+
+### v1.2.0 - Custom Users
+
+- Added Support for one custom user. More Slots will come soon
+- Added a Preview of the welcome message in the GUI
+- Reorganized some GUI elements
+- Added my other projects to the GUI under the extra info section
 
 ### v1.1.1 - Small Update
 

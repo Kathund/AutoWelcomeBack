@@ -1,10 +1,16 @@
+import * as helperFunctions from "./helperFunctions.js"
 let currentVersion = JSON.parse(FileLib.read("AutoWelcomeBack", "metadata.json")).version
-import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchProperty, @SelectorProperty, Color} from 'Vigilance';
+import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, } from 'Vigilance';
 @Vigilant('AutoWelcomeBack', 'Auto Welcome Back', {
     getCategoryComparator: () => (a, b) => {
-        const categories = ['Settings', 'Emojis', 'Extra Info'];
+        const categories = ['Settings', 'Emojis', 'Custom Users', 'Extra Info'];
         return categories.indexOf(a.name) - categories.indexOf(b.name);
-    }
+    },
+    getSubcategoryComparator: () => (a, b) => {
+        const subcategories = ["General", "MVP++", "Rank Gifting", "Info", "Other Projects", "Credits"];
+        return subcategories.indexOf(a.getValue()[0].attributesExt.subcategory) -
+            subcategories.indexOf(b.getValue()[0].attributesExt.subcategory);
+    },
 })
 
 class Settings {
@@ -18,7 +24,6 @@ class Settings {
     })
     welcomeBackToggle = true;
 
-    // ! Settings
     @SwitchProperty({
         name: "MVP++",
         description: "If you have mvp++ turn this on and it will replace the emojis with the mvp++ emojis",
@@ -40,9 +45,23 @@ class Settings {
         description: 'Set the message that will be sent in chat when the user joins hypixel',
         category: 'Settings',
         subcategory: 'General',
-        placeholder: '( ﾟ◡ﾟ)/ Welcome Back Udderly_cool! ❤',
+        placeholder: '{wave} Welcome Back {username}! {heart}',
     })
     welcomeBackMessage = '{wave} Welcome Back {username}! {heart}';
+
+    @ButtonProperty({
+        name: "Preview",
+        description: "Shows a preview of your custom message",
+        category: "Settings",
+        subcategory: "General",
+        placeholder: `Show Example In Chat`
+    })
+    previewMessage() {
+        helperFunctions.getUsername(Player.getUUID()).then(playerName => {
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&dUdderly_cool &ejoined.&r`);
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.welcomeBackMessage, "Udderly_cool")}&r`);
+        })
+    };
 
     // ! Emojis
 
@@ -50,7 +69,8 @@ class Settings {
         name: "&b&l{username}",
         description: "Will return the username of the player that joined",
         category: "Emojis",
-        placeholder: "Udderly_cool"
+        placeholder: Player.getName(),
+        subcategory: "General"
     })
     emojisUsername() { };
 
@@ -58,7 +78,8 @@ class Settings {
         name: "&b&l{heart}",
         description: "Will replace the emoji with a heart",
         category: "Emojis",
-        placeholder: "❤"
+        placeholder: "❤",
+        subcategory: "General"
     })
     emojisHeart() { };
 
@@ -66,7 +87,8 @@ class Settings {
         name: "&b&l{arrow}",
         description: "Will replace the emoji with a arrow",
         category: "Emojis",
-        placeholder: "➜"
+        placeholder: "➜",
+        subcategory: "General"
     })
     emojisArrow() { };
 
@@ -74,7 +96,8 @@ class Settings {
         name: "&b&l{peace}",
         description: "Will replace the emoji with a peace sign",
         category: "Emojis",
-        placeholder: "✌"
+        placeholder: "✌",
+        subcategory: "General"
     })
     emojisPeace() { };
 
@@ -82,7 +105,8 @@ class Settings {
         name: "&b&l{star}",
         description: "Will replace the emoji with a star",
         category: "Emojis",
-        placeholder: "✯"
+        placeholder: "✯",
+        subcategory: "General"
     })
     emojisStar() { };
 
@@ -90,7 +114,8 @@ class Settings {
         name: "&b&l{yes}",
         description: "Will replace the emoji with a yes",
         category: "Emojis",
-        placeholder: "✔"
+        placeholder: "✔",
+        subcategory: "General"
     })
     emojisYes() { };
 
@@ -98,7 +123,8 @@ class Settings {
         name: "&b&l{no}",
         description: "Will replace the emoji with a no",
         category: "Emojis",
-        placeholder: "✗"
+        placeholder: "✗",
+        subcategory: "General"
     })
     emojisNo() { };
 
@@ -106,7 +132,8 @@ class Settings {
         name: "&b&l{star2}",
         description: "Will replace the emoji with a star",
         category: "Emojis",
-        placeholder: "✪"
+        placeholder: "✪",
+        subcategory: "General"
     })
     emojisStar2() { };
 
@@ -114,7 +141,8 @@ class Settings {
         name: "&b&l{wave}",
         description: "Will replace the emoji with a wave emote",
         category: "Emojis",
-        placeholder: "( ﾟ◡ﾟ)/"
+        placeholder: "( ﾟ◡ﾟ)/",
+        subcategory: "General"
     })
     emojisWave() { };
 
@@ -122,7 +150,8 @@ class Settings {
         name: "&b&l{boop}",
         description: "Will replace the emoji with a boop",
         category: "Emojis",
-        placeholder: "Boop!"
+        placeholder: "Boop!",
+        subcategory: "General"
     })
     emojisBoop() { };
 
@@ -193,6 +222,7 @@ class Settings {
         name: "&b&l{snail}",
         description: "Will replace the emoji with a snail emojicon",
         category: "Emojis",
+        subcategory: "MVP++",
         placeholder: "@'-'"
     })
     emojiSnail() { };
@@ -306,7 +336,7 @@ class Settings {
     emojiCat() { };
 
     @ButtonProperty({
-        name: "&b&l{h}",
+        name: "&b&l{h/}",
         description: "Will replace the emoji with the Wave emojicon",
         category: "Emojis",
         subcategory: "Rank Gifting",
@@ -350,6 +380,42 @@ class Settings {
     })
     emojiDj() { };
 
+    // ! Custom Users
+
+
+
+    @TextProperty({
+        name: "Username",
+        description: "Custom message for set user - enter the person's username (case dosent matter)",
+        category: "Custom Users",
+        subcategory: "User 1",
+        placeholder: Player.getName(),
+    })
+    customUser1Name = Player.getName();
+
+    @TextProperty({
+        name: 'Welcome Back message',
+        description: 'Set the message that will be sent in chat when the user joins hypixel',
+        category: 'Custom Users',
+        subcategory: "User 1",
+        placeholder: '{h/} Welcome Back {username}! {heart}',
+    })
+    customUser1Message = '{h/} Welcome Back {username}! {heart}';
+
+    @ButtonProperty({
+        name: "Preview",
+        description: "Shows a preview of your custom message",
+        category: "Custom Users",
+        subcategory: "User 1",
+        placeholder: `Show Example In Chat`
+    })
+    previewMessageUser1() {
+        helperFunctions.getUsername(Player.getUUID()).then(playerName => {
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&d${this.customUser1Name} &ejoined.&r`);
+            ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.customUser1Message, this.customUser1Name)}&r`);
+        })
+    };
+
     // ! Extra Info
 
     @ButtonProperty({
@@ -360,6 +426,17 @@ class Settings {
         placeholder: " "
     })
     creditsVersion() { };
+
+    @ButtonProperty({
+        name: "&1&lKath Addons",
+        description: `A ChatTriggers module that is designed for hypixel skyblock.It has QOL fetures read the features list for more info.`,
+        category: "Extra Info",
+        subcategory: "Other Projects",
+        placeholder: "IMPORT"
+    })
+    importKathAddons() {
+        ChatLib.command(`ct reload`);
+    };
 
     @ButtonProperty({
         name: "&d&lUdderly_cool (Kathund#2004)",
@@ -390,9 +467,6 @@ class Settings {
 
     constructor() {
         this.initialize(this);
-        this.registerListener('Welcome Back message', newText => {
-            console.log(`Text changed to ${newText}`);
-        });
     }
 }
 
