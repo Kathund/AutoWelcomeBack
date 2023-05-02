@@ -1,6 +1,6 @@
 # Auto Welcome Back - Kathund#2004
 
-[Chattrigger Module](https://www.chattriggers.com/modules/v/KathAddons)
+[Chattrigger Module](https://www.chattriggers.com/modules/v/AutoWelcomeBack)
 
 ## Description
 
