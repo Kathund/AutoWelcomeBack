@@ -14,6 +14,12 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 ## Change Log
 
+### v1.2.1 
+
+- Fixed a bug where the module was not able to be turned off
+- Added more delay to the messages so the person joinning the server will be more likely to view the message
+- Updated the way the delay system works so it will auctualy run and not just error out some times (was causing the game to crash)
+
 ### v1.2.0 - Custom Users
 
 - Added Support for one custom user. More Slots will come soon
