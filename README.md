@@ -12,17 +12,17 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 - `/autowb` - Open the GUI
 
-## Change 
-
-### v1.2.2
-
-- Added Customizable delay
+## Change Log
 
 ### v1.3.0 - Friends Update
 
 - Added Friends menu in the GUI
 - Added the option to have a differnet message than guild members
 - Added the option to boop the user
+
+### v1.2.2
+
+- Added Customizable delay
 
 ### v1.2.1
 
