@@ -20,6 +20,10 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 - Added the option to have a differnet message than guild members
 - Added the option to boop the user
 
+### v1.2.3
+
+- Fixed a bug with the GUI causing the module not to work
+
 ### v1.2.2
 
 - Added Customizable delay
