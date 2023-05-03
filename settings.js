@@ -1,9 +1,11 @@
-import * as helperFunctions from "./helperFunctions.js"
-let currentVersion = JSON.parse(FileLib.read("AutoWelcomeBack", "metadata.json")).version
 import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, @SliderProperty @SliderProperty } from 'Vigilance';
+let currentVersion = JSON.parse(FileLib.read("AutoWelcomeBack", "metadata.json")).version
+import * as helperFunctions from "./helperFunctions.js"
+import { Promise } from '../PromiseV2';
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 @Vigilant('AutoWelcomeBack', 'Auto Welcome Back BETA', {
   getCategoryComparator: () => (a, b) => {
-    const categories = ['Settings', 'Guild', 'Frineds', 'Emojis', 'Custom Users', 'Extra Info'];
+    const categories = ['Settings', 'Guild', 'Friends', 'Emojis', 'Custom Users', 'Extra Info'];
     return categories.indexOf(a.name) - categories.indexOf(b.name);
   },
   getSubcategoryComparator: () => (a, b) => {
@@ -43,14 +45,23 @@ class Settings {
   })
   messageDelay = 2000;
 
+  // ! Guild
+  @SwitchProperty({
+    name: "Toggle",
+    description: "Overall Toggle",
+    category: "Guild",
+    subcategory: "General"
+  })
+  guildToggle = true;
+
   @TextProperty({
     name: 'Welcome Back message',
     description: 'Set the message that will be sent in chat when the user joins hypixel',
-    category: 'Settings',
+    category: 'Guild',
     subcategory: 'General',
     placeholder: '{wave} Welcome Back {username}! {heart}',
   })
-  welcomeBackMessage = '{wave} Welcome Back {username}! {heart}';
+  guildWelcomeBackMessage = '{wave} Welcome Back {username}! {heart}';
 
   @ButtonProperty({
     name: "Preview",
@@ -61,12 +72,12 @@ class Settings {
   })
   previewGuildMessage() {
     helperFunctions.getUsername(Player.getUUID()).then(playerName => {
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&dUdderly_cool &ejoined.&r`);
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.welcomeBackMessage, "Udderly_cool")}&r`);
+      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&4Udderly_cool &ejoined.&r`);
+      delay(this.messageDelay).then(() => ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &2[MVP&2-+&4] ${playerName}&r: ${helperFunctions.emojis(this.guildWelcomeBackMessage, "Udderly_cool")}&r`));
     })
   };
 
-  // !  Friends
+  // ! Friends
   @SwitchProperty({
     name: "Toggle",
     description: "Overall Toggle",
@@ -89,7 +100,7 @@ class Settings {
     category: "Friends",
     subcategory: "General"
   })
-  friendWelcomeBackToggle = true;
+  friendWelcomeBackMessageToggle = true;
 
   @TextProperty({
     name: 'Welcome Back message',
@@ -108,10 +119,9 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewFriendsMessage() {
-    helperFunctions.getUsername(Player.getUUID()).then(playerName => {
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&dUdderly_cool &ejoined.&r`);
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.welcomeBackMessage, "Udderly_cool")}&r`);
-    })
+    ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &dFriend > &r&4Udderly_cool &ejoined.&r`);
+    if (this.friendWelcomeBackMessageToggle) { delay(this.messageDelay).then(() => ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &dTo &2[MVP&2-+&4] Udderly_cool&7: &r${helperFunctions.emojis(this.friendWelcomeBackMessage, "Udderly_cool")}&r`)); }
+    if (this.friendBoopToggle) { delay(this.messageDelay + 20).then(() => ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &dTo &2[MVP&2-+&4] Udderly_cool&7: &r&r&d&lBoop!&r `)); }
   };
 
   // ! Emojis
