@@ -34,28 +34,19 @@ class Settings {
   rankGifting = false;
 
   @SliderProperty({
-    name: "Auto Dungeon delay",
+    name: "Message Delay",
     description: "Change how long the delay is before sending the message (in milliseconds - 1000ms = 1 second) - if you dont know what this is dont change it",
-    category: "Dungeons",
+    category: "Settings",
     subcategory: "General",
     min: 0,
     max: 5000
   })
   messageDelay = 2000;
 
-  // ! Guild
-  @SwitchProperty({
-    name: "Toggle",
-    description: "Toggle the guild auto welcome back on or off",
-    category: "Guild",
-    subcategory: "General"
-  })
-  welcomeBackToggle = true;
-
   @TextProperty({
     name: 'Welcome Back message',
     description: 'Set the message that will be sent in chat when the user joins hypixel',
-    category: 'Guild',
+    category: 'Settings',
     subcategory: 'General',
     placeholder: '{wave} Welcome Back {username}! {heart}',
   })
