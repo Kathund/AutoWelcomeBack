@@ -1,6 +1,6 @@
 import * as helperFunctions from "./helperFunctions.js"
 let currentVersion = JSON.parse(FileLib.read("AutoWelcomeBack", "metadata.json")).version
-import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, } from 'Vigilance';
+import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, @SliderProperty } from 'Vigilance';
 @Vigilant('AutoWelcomeBack', 'Auto Welcome Back', {
     getCategoryComparator: () => (a, b) => {
         const categories = ['Settings', 'Emojis', 'Custom Users', 'Extra Info'];
