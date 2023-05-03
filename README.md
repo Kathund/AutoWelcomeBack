@@ -12,7 +12,11 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 - `/autowb` - Open the GUI
 
-## Change Log
+## Change 
+
+### v1.2.2
+
+- Added Customizable delay
 
 ### v1.2.1 
 
