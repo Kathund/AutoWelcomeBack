@@ -15,8 +15,8 @@ register("chat", function (message, event) {
   var name = message.substring(2);
   if (config.welcomeBackToggle === false) return;
   if (name.toLowerCase() === config.customUser1Name.toLowerCase()) {
-    delay(2000).then(() => ChatLib.command(`gc ${helperFunctions.emojis(config.customUser1Message, name)}`));
+    delay(config.messageDelay).then(() => ChatLib.command(`gc ${helperFunctions.emojis(config.customUser1Message, name)}`));
   } else {
-    delay(2000).then(() => ChatLib.command(`gc ${helperFunctions.emojis(config.welcomeBackMessage, name)}`));
+    delay(config.messageDelay).then(() => ChatLib.command(`gc ${helperFunctions.emojis(config.welcomeBackMessage, name)}`));
   }
 }).setChatCriteria("&2Guild > &r${message} &r&ejoined.&r");

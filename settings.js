@@ -40,6 +40,16 @@ class Settings {
     })
     rankGifting = false;
 
+    @SliderProperty({
+      name: "Message Delay",
+      description: "Change how long the delay is before sending the message (in milliseconds - 1000ms = 1 second) - if you dont know what this is dont change it",
+      category: "Settings",
+      subcategory: "General",
+      min: 0,
+      max: 5000
+    })
+    messageDelay = 2000;
+  
     @TextProperty({
         name: 'Welcome Back message',
         description: 'Set the message that will be sent in chat when the user joins hypixel',
