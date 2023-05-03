@@ -14,6 +14,10 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 ## Change 
 
+### v1.2.3
+
+- Fixed a bug with the GUI causing the module not to work
+
 ### v1.2.2
 
 - Added Customizable delay
