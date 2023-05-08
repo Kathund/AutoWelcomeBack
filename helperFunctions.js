@@ -1,3 +1,4 @@
+import PogObject from "../PogData/index"
 import Settings from "./settings";
 import axios from "../axios";
 const config = Settings
@@ -89,3 +90,30 @@ export const removeColors = function removeColors(text) {
 }
 
 export const getUsername = (uuid) => axios.get(`https://sessionserver.mojang.com/session/minecraft/profile/${uuid}`).then(a => a.data.name).catch(e => { console.log(e) })
+
+export const divider = "&a&m            &d&m            &e&m            &a&m            &d&m            &e&m            &a&m           &d&m           &e&m           &8\n";
+
+export const data = new PogObject("AutoWelcomeBack", {
+  "firstTimeMsg": false
+}, "data/data.json")
+
+export const ShowFirstLoginMessage = () => {
+  data.firstTimeMsg = true;
+  data.save();
+
+  let stringArray = [
+    `${divider}`,
+    ChatLib.getCenteredText(`&dAuto Welcome Back`) + "\n",
+    ChatLib.getCenteredText(`&8Looks like this is your first using &dAuto Welcome Backs&8!`) + "\n",
+    ChatLib.getCenteredText(`&8GUI command is &e/autowb`) + "\n",
+    `\n${divider}`
+  ]
+
+  let finalText = ""
+  stringArray.forEach((line) => {
+    if (line == "-/*") return
+    finalText += (!line.includes("-/-")) ? `\n${line}` : line.replace("-/-", "\n")
+  })
+
+  ChatLib.chat(finalText)
+}
