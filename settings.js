@@ -506,7 +506,7 @@ class Settings {
     placeholder: "IMPORT"
   })
   importKathAddons() {
-    ChatLib.command(`ct reload`);
+    ChatLib.command(`ct import kathaddons`);
   };
 
   @ButtonProperty({
