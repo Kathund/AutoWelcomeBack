@@ -6,14 +6,14 @@ register("command", () => config.openGUI()).setName("autowb");
 
 // ! Guild
 
-import './feture/guild/join.js';
-import './feture/guild/joinUser1.js';
+import './feature/guild/join.js';
+import './feature/guild/joinUser1.js';
 
 // ! Friends
 
-import './feture/friends/boop.js';
-import './feture/friends/joinMessage.js';
+import './feature/friends/boop.js';
+import './feature/friends/joinMessage.js';
 
 // ! Other
 
-import './feture/firstInstall.js';
+import './feature/firstInstall.js';
