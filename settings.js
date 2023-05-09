@@ -500,7 +500,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&1&lKath Addons",
-    description: `A ChatTriggers module that is designed for hypixel skyblock.It has QOL fetures read the features list for more info.`,
+    description: `A ChatTriggers module that is designed for hypixel skyblock.It has QOL features read the features list for more info.`,
     category: "Extra Info",
     subcategory: "Other Projects",
     placeholder: "IMPORT"
