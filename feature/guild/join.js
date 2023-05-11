@@ -1,3 +1,4 @@
+import * as helperFunctions from "../../helperFunctions.js";
 import { Promise } from '../../PromiseV2';
 import Settings from "../../settings.js";
 const config = Settings

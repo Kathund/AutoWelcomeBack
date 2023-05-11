@@ -3,8 +3,8 @@ import Settings from "./settings";
 import axios from "../axios";
 const config = Settings
 
-export const emojis = function checkEmojies(text, username) {
-  if (config.mvpPLUSPLUS === true) {
+export const emojis = function (text, username) {
+  if (config.mvpPLUSPLUS) {
     text = text.replaceAll('{star}', ':star:')
       .replaceAll('{yes}', ':yes:')
       .replaceAll('{no}', ':no:')
@@ -27,7 +27,7 @@ export const emojis = function checkEmojies(text, username) {
       .replaceAll('{heart}', '<3')
   }
 
-  if (config.rankGifting === true) {
+  if (config.rankGifting) {
     text = text.replaceAll('{sloth}', ':sloth:')
       .replaceAll('{yey}', ':yey:')
       .replaceAll('{^-^}', '^-^')
@@ -84,7 +84,7 @@ export const emojis = function checkEmojies(text, username) {
   return text;
 }
 
-export const removeColors = function removeColors(text) {
+export const removeColors = function (text) {
   const cleanText = text.replace(/§./g, "");
   return cleanText;
 }
