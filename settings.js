@@ -547,6 +547,83 @@ class Settings {
     helperFunctions.viewChangeLog1_3_0();    
   };
 
+  @ButtonProperty({
+    name: "1.2.3",
+    description: "Shows change log for version 1.2.3",
+    category: "Extra Info",
+    subcategory: "Change Log",
+    placeholder: "Show In Chat"
+  })
+  changeLog1_2_3() {
+    helperFunctions.viewChangeLog1_2_3();    
+  };
+
+  @ButtonProperty({
+    name: "1.2.2",
+    description: "Shows change log for version 1.2.2",
+    category: "Extra Info",
+    subcategory: "Change Log",
+    placeholder: "Show In Chat"
+  })
+  changeLog1_2_2() {
+    helperFunctions.viewChangeLog1_2_2();    
+  };
+
+  @ButtonProperty({
+    name: "1.2.1",
+    description: "Shows change log for version 1.2.1",
+    category: "Extra Info",
+    subcategory: "Change Log",
+    placeholder: "Show In Chat"
+  })
+  changeLog1_2_1() {
+    helperFunctions.viewChangeLog1_2_1();    
+  };
+
+  @ButtonProperty({
+    name: "1.2.0",
+    description: "Shows change log for version 1.2.0",
+    category: "Extra Info",
+    subcategory: "Change Log",
+    placeholder: "Show In Chat"
+  })
+  changeLog1_2_0() {
+    helperFunctions.viewChangeLog1_2_0();    
+  };
+
+  @ButtonProperty({
+    name: "1.1.1",
+    description: "Shows change log for version 1.1.1",
+    category: "Extra Info",
+    subcategory: "Change Log",
+    placeholder: "Show In Chat"
+  })
+  changeLog1_1_1() {
+    helperFunctions.viewChangeLog1_1_1();    
+  };
+
+  @ButtonProperty({
+    name: "1.1.0",
+    description: "Shows change log for version 1.1.0",
+    category: "Extra Info",
+    subcategory: "Change Log",
+    placeholder: "Show In Chat"
+  })
+  changeLog1_1_0() {
+    helperFunctions.viewChangeLog1_1_0();    
+  };
+
+  @ButtonProperty({
+    name: "1.0.0",
+    description: "Shows change log for version 1.0.0",
+    category: "Extra Info",
+    subcategory: "Change Log",
+    placeholder: "Show In Chat"
+  })
+  changeLog1_0_0() {
+    helperFunctions.viewChangeLog1_0_0();    
+  };
+
   constructor() {
     this.initialize(this);
   }
