@@ -3,13 +3,13 @@ let currentVersion = JSON.parse(FileLib.read("AutoWelcomeBack", "metadata.json")
 import * as helperFunctions from "./helperFunctions.js"
 import { Promise } from '../PromiseV2';
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-@Vigilant('AutoWelcomeBack', 'Auto Welcome Back BETA', {
+@Vigilant('AutoWelcomeBack', 'Auto Welcome Back', {
   getCategoryComparator: () => (a, b) => {
     const categories = ['Settings', 'Guild', 'Friends', 'Emojis', 'Custom Users', 'Extra Info'];
     return categories.indexOf(a.name) - categories.indexOf(b.name);
   },
   getSubcategoryComparator: () => (a, b) => {
-    const subcategories = ["General", "MVP++", "Rank Gifting", "Info", "Other Projects", "Credits"];
+    const subcategories = ["General", "MVP++", "Rank Gifting", "Info", "Other Projects", "Credits", "Change Log"];
     return subcategories.indexOf(a.getValue()[0].attributesExt.subcategory) -
       subcategories.indexOf(b.getValue()[0].attributesExt.subcategory);
   },
@@ -37,7 +37,7 @@ class Settings {
 
   @SliderProperty({
     name: "Message Delay",
-    description: "Change how long the delay is before sending the message (in milliseconds - 1000ms = 1 second) - if you dont know what this is dont change it",
+    description: "Change how long the delay is before sending the message (in milliseconds - 1000ms = 1 second) - if you don't know what this is don't change it",
     category: "Settings",
     subcategory: "General",
     min: 0,
@@ -229,7 +229,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{shrug}",
-    description: "Will replace the emoji with a shrug emojicon",
+    description: "Will replace the emoji with a shrug emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: '¯\_(ツ)_/¯'
@@ -238,7 +238,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{tableflip}",
-    description: "Will replace the emoji with a tableflip emojicon",
+    description: "Will replace the emoji with a tableflip emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "(╯°□°）╯︵ ┻━┻"
@@ -256,7 +256,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{totem}",
-    description: "Will replace the emoji with a totem emojicon",
+    description: "Will replace the emoji with a totem emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "☉_☉"
@@ -265,7 +265,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{typing}",
-    description: "Will replace the emoji with a typing emojicon",
+    description: "Will replace the emoji with a typing emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "✎..."
@@ -274,7 +274,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{maths}",
-    description: "Will replace the emoji with a maths emojicon",
+    description: "Will replace the emoji with a maths emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "√(π+x)=L"
@@ -283,7 +283,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{snail}",
-    description: "Will replace the emoji with a snail emojicon",
+    description: "Will replace the emoji with a snail emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "@'-'"
@@ -292,7 +292,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{thinking}",
-    description: "Will replace the emoji with a thinking emojicon",
+    description: "Will replace the emoji with a thinking emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "(0.o?)"
@@ -301,7 +301,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{gimme}",
-    description: "Will replace the emoji with a gimme emojicon",
+    description: "Will replace the emoji with a gimme emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "༼つ◕_◕༽つ"
@@ -310,7 +310,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{wizard}",
-    description: "Will replace the emoji with a wizard emojicon",
+    description: "Will replace the emoji with a wizard emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "('-')⊃━☆ﾟ.*･｡ﾟ"
@@ -337,7 +337,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{puffer}",
-    description: "Will replace the emoji with a puffer emojicon",
+    description: "Will replace the emoji with a puffer emoticon",
     category: "Emojis",
     subcategory: "MVP++",
     placeholder: "<('O')>"
@@ -348,7 +348,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{sloth}",
-    description: "Will replace the emoji with a sloth emojicon",
+    description: "Will replace the emoji with a sloth emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "(・⊝・)"
@@ -357,7 +357,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{yey}",
-    description: "Will replace the emoji with the yey emojicon",
+    description: "Will replace the emoji with the yey emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "ヽ (◕◡◕) ﾉ"
@@ -366,7 +366,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{^-^}",
-    description: "Will replace the emoji with the slime emojicon",
+    description: "Will replace the emoji with the slime emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "^-^"
@@ -375,7 +375,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{cute}",
-    description: "Will replace the emoji with the cute emojicon",
+    description: "Will replace the emoji with the cute emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "(✿◠‿◠)"
@@ -384,7 +384,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{^_^}",
-    description: "Will replace the emoji with the other sliem emojicon",
+    description: "Will replace the emoji with the other slime emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "^_^"
@@ -393,7 +393,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{cat}",
-    description: "Will replace the emoji with the cat emojicon",
+    description: "Will replace the emoji with the cat emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "= ＾● ⋏ ●＾ ="
@@ -402,7 +402,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{h/}",
-    description: "Will replace the emoji with the Wave emojicon",
+    description: "Will replace the emoji with the Wave emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "ヽ(^◇^*)/"
@@ -411,7 +411,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{dog}",
-    description: "Will replace the emoji with the dog emojicon",
+    description: "Will replace the emoji with the dog emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "(ᵔᴥᵔ)"
@@ -420,7 +420,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{snow}",
-    description: "Will replace the emoji with the snow emojicon",
+    description: "Will replace the emoji with the snow emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "☃"
@@ -429,7 +429,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{dab}",
-    description: "Will replace the emoji with the dab emojicon",
+    description: "Will replace the emoji with the dab emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "<o/"
@@ -438,7 +438,7 @@ class Settings {
 
   @ButtonProperty({
     name: "&b&l{dj}",
-    description: "Will replace the emoji with the dj emojicon",
+    description: "Will replace the emoji with the dj emoticon",
     category: "Emojis",
     subcategory: "Rank Gifting",
     placeholder: "ヽ(⌐■_■)ノ♬"
@@ -457,7 +457,7 @@ class Settings {
 
   @TextProperty({
     name: "Username",
-    description: "Custom message for set user - enter the person's username (case dosent matter)",
+    description: "Custom message for set user - enter the person's username (case doesn't matter)",
     category: "Custom Users",
     subcategory: "User 1",
     placeholder: Player.getName(),
@@ -500,13 +500,13 @@ class Settings {
 
   @ButtonProperty({
     name: "&1&lKath Addons",
-    description: `A ChatTriggers module that is designed for hypixel skyblock.It has QOL features read the features list for more info.`,
+    description: `A ChatTriggers module that is designed for hypixel skyblock. It has QOL features read the features list for more info.`,
     category: "Extra Info",
     subcategory: "Other Projects",
     placeholder: "IMPORT"
   })
   importKathAddons() {
-    ChatLib.command(`ct import kathaddons`);
+    ChatLib.command(`ct import kath`);
   };
 
   @ButtonProperty({
@@ -535,6 +535,17 @@ class Settings {
     placeholder: " "
   })
   creditsGh0st() { };
+
+  @ButtonProperty({
+    name: "1.3.0",
+    description: "Shows change log for version 1.3.0",
+    category: "Extra Info",
+    subcategory: "Change Log",
+    placeholder: "Show In Chat"
+  })
+  changeLog1_3_0() {
+    helperFunctions.viewChangeLog1_3_0();    
+  };
 
   constructor() {
     this.initialize(this);

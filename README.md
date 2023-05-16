@@ -1,10 +1,10 @@
 # Auto Welcome Back - Kathund#2004
 
-[Chattrigger Module](https://www.chattriggers.com/modules/v/AutoWelcomeBack)
+[Chattriggers Module](https://www.chattriggers.com/modules/v/AutoWelcomeBack)
 
 ## Description
 
-A Simple Chat triggers module that alows you to welcome guild members back when they join and is highly customizable
+A Simple Chat triggers module that allows you to welcome guild members back when they join and is highly customizable
 
 ## Commands
 
@@ -17,10 +17,12 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 ### v1.3.0 - Friends Update
 
 - Added Friends menu in the GUI
-- Added the option to have a differnet message than guild members
+- Added the option to have a different message than guild members
 - Added the option to boop the user
 - Moved everything to its own file for better backend
 - Added first join message
+- Changed spelling in most files
+- Added Change log for when the module updates
 
 ### v1.2.3
 
@@ -33,8 +35,8 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 ### v1.2.1
 
 - Fixed a bug where the module was not able to be turned off
-- Added more delay to the messages so the person joinning the server will be more likely to view the message
-- Updated the way the delay system works so it will auctualy run and not just error out some times (was causing the game to crash)
+- Added more delay to the messages so the person jointing the server will be more likely to view the message
+- Updated the way the delay system works so it will actually run and not just error out some times (was causing the game to crash)
 
 ### v1.2.0 - Custom Users
 
@@ -47,7 +49,7 @@ A Simple Chat triggers module that alows you to welcome guild members back when 
 
 - Added MVP++ Emojis
 - Added Rank Gifting Emojis
-- Fixed a bug where the config wouldnt save
+- Fixed a bug where the config wouldn't save
 
 ### v1.1.0 - GUI Update
 

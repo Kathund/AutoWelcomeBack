@@ -69,7 +69,7 @@ export const emojis = function (text, username) {
     .replaceAll('{oof}', 'OOF')
     .replaceAll('{puffer}', "<('O')>")
 
-    // Rank gifitng emojis
+    // Rank gifting emojis
     .replaceAll('{sloth}', '(・⊝・)')
     .replaceAll('{yey}', 'ヽ (◕◡◕) ﾉ')
     .replaceAll('{^-^}', '^-^')
@@ -116,4 +116,138 @@ export const ShowFirstLoginMessage = () => {
   })
 
   ChatLib.chat(finalText)
+}
+
+export const viewChangeLog1_3_0 = () => {
+  const customUsers = new Message(
+    new TextComponent("&7Added the option to have a different message than guild members")
+  );
+  const boop = new Message(
+    new TextComponent("&7Added the option to boop the user")
+  );
+  const backEnd = new Message(
+    new TextComponent("&7Moved everything to its own file for better backend")
+  );
+  const firstInstallMessage = new Message(
+    new TextComponent("&7Added first install message")
+  );
+  const changeLog = new Message(
+    new TextComponent("&7Added Change log button in the GUI")
+  );
+  const spelling = new Message(
+    new TextComponent("&7Changed spelling in most files")
+  );
+
+  ChatLib.chat(divider)
+  ChatLib.chat(`&dAutoWelcomeBack - &ev1.3.0`)
+  ChatLib.chat(customUsers)
+  ChatLib.chat(boop)
+  ChatLib.chat(backEnd)
+  ChatLib.chat(firstInstallMessage)
+  ChatLib.chat(changeLog)
+  ChatLib.chat(spelling)
+  ChatLib.chat(divider)
+}
+
+export const viewChangeLog1_2_3 = () => {
+  const bug = new Message(
+    new TextComponent("&7Fixed a bug with the GUI causing the module not to work")
+  );
+
+  ChatLib.chat(divider)
+  ChatLib.chat(`&dAutoWelcomeBack - &ev1.2.3`)
+  ChatLib.chat(bug)
+  ChatLib.chat(divider)
+}
+
+export const viewChangeLog1_2_2 = () => {
+  const delay = new Message(
+    new TextComponent("&7Added Customizable delay")
+  );
+
+  ChatLib.chat(divider)
+  ChatLib.chat(`&dAutoWelcomeBack - &ev1.2.2`)
+  ChatLib.chat(delay)
+  ChatLib.chat(divider)
+}
+
+export const viewChangeLog1_2_1 = () => {
+  const bug = new Message(
+    new TextComponent("&7Fixed a bug where the module was not able to be turned off")
+  );
+  const delay = new Message(
+    new TextComponent("&7Added more delay to the messages so the person jointing the server will be more likely to view the message")
+  );
+  const moreDelay = new Message(
+    new TextComponent("&7Updated the way the delay system works so it will actually run and not just error out some times (was causing the game to crash)")
+  );
+
+  ChatLib.chat(divider)
+  ChatLib.chat(`&dAutoWelcomeBack - &ev1.2.1`)
+  ChatLib.chat(bug)
+  ChatLib.chat(delay)
+  ChatLib.chat(moreDelay)
+  ChatLib.chat(divider)
+}
+
+export const viewChangeLog1_2_0 = () => {
+  const users = new Message(
+    new TextComponent("&7Added Support for one custom user. More Slots will come soon")
+  );
+  const preview = new Message(
+    new TextComponent("&7Added a Preview of the welcome message in the GUI")
+  );
+  const reorganized = new Message(
+    new TextComponent("&7Reorganized some GUI elements")
+  );
+  const otherProjects = new Message(
+    new TextComponent("&7Added my other projects to the GUI under the extra info section")
+  );
+
+  ChatLib.chat(divider)
+  ChatLib.chat(`&dAutoWelcomeBack - &ev1.2.0 &d- Custom Users`)
+  ChatLib.chat(users)
+  ChatLib.chat(preview)
+  ChatLib.chat(reorganized)
+  ChatLib.chat(otherProjects)
+  ChatLib.chat(divider)
+}
+
+export const viewChangeLog1_1_1 = () => {
+  const plusPlusEmojis = new Message(
+    new TextComponent("&7AAdded MVP++ Emojis")
+  );
+  const rankGiftingEmojis = new Message(
+    new TextComponent("&7Added Rank Gifting Emojis")
+  );
+  const bug = new Message(
+    new TextComponent("&7Fixed a bug where the config wouldn't save")
+  );
+
+  ChatLib.chat(divider)
+  ChatLib.chat(`&dAutoWelcomeBack - &ev1.1.1`)
+  ChatLib.chat(plusPlusEmojis)
+  ChatLib.chat(rankGiftingEmojis)
+  ChatLib.chat(bug)
+  ChatLib.chat(divider)
+}
+
+
+export const viewChangeLog1_1_0 = () => {
+  const welcomeBackToggle = new Message(
+    new TextComponent("&7Removed &l/autowb toggle&r command")
+  );
+  const welcomeBackStatus = new Message(
+    new TextComponent("&7Removed &l/autowb status&r command")
+  );
+  const gui = new Message(
+    new TextComponent("&7Added GUI &8(hover)").setHover("show_text", `/autowb command will open the GUI\nSetting\nToggle - Toggles the guild auto welcome back on or off\nWelcome Message - The message that will be sent when a guild member joins\nEmojis\nNot much to explain here, just the emojis that can be used in the welcome message and how to use them\nExtra Info\nNot much to explain here, just some extra info about the module`)
+  );
+
+  ChatLib.chat(divider)
+  ChatLib.chat(`&dAutoWelcomeBack - &ev1.1.0 -&d GUI update`)
+  ChatLib.chat(welcomeBackToggle)
+  ChatLib.chat(welcomeBackStatus)
+  ChatLib.chat(gui)
+  ChatLib.chat(divider)
 }
