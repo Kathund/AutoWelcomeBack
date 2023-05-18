@@ -91,7 +91,7 @@ export const removeColors = function (text) {
 
 export const getUsername = (uuid) => axios.get(`https://sessionserver.mojang.com/session/minecraft/profile/${uuid}`).then(a => a.data.name).catch(e => { console.log(e) })
 
-export const divider = "&a&m            &d&m            &e&m            &a&m            &d&m            &e&m            &a&m           &d&m           &e&m           &8\n";
+export const divider = "&a&m            &d&m            &e&m            &a&m            &d&m            &e&m            &a&m           &d&m           &e&m           &8";
 
 export const data = new PogObject("AutoWelcomeBack", {
   "firstTimeMsg": false
@@ -139,6 +139,7 @@ export const viewChangeLog1_3_0 = () => {
   );
 
   ChatLib.chat(divider)
+  ChatLib.chat("")
   ChatLib.chat(`&dAutoWelcomeBack - &ev1.3.0`)
   ChatLib.chat(customUsers)
   ChatLib.chat(boop)
@@ -146,6 +147,7 @@ export const viewChangeLog1_3_0 = () => {
   ChatLib.chat(firstInstallMessage)
   ChatLib.chat(changeLog)
   ChatLib.chat(spelling)
+  ChatLib.chat("")
   ChatLib.chat(divider)
 }
 
@@ -155,8 +157,10 @@ export const viewChangeLog1_2_3 = () => {
   );
 
   ChatLib.chat(divider)
+  ChatLib.chat("")
   ChatLib.chat(`&dAutoWelcomeBack - &ev1.2.3`)
   ChatLib.chat(bug)
+  ChatLib.chat("")
   ChatLib.chat(divider)
 }
 
@@ -166,8 +170,10 @@ export const viewChangeLog1_2_2 = () => {
   );
 
   ChatLib.chat(divider)
+  ChatLib.chat("")
   ChatLib.chat(`&dAutoWelcomeBack - &ev1.2.2`)
   ChatLib.chat(delay)
+  ChatLib.chat("")
   ChatLib.chat(divider)
 }
 
@@ -183,10 +189,12 @@ export const viewChangeLog1_2_1 = () => {
   );
 
   ChatLib.chat(divider)
+  ChatLib.chat("")
   ChatLib.chat(`&dAutoWelcomeBack - &ev1.2.1`)
   ChatLib.chat(bug)
   ChatLib.chat(delay)
   ChatLib.chat(moreDelay)
+  ChatLib.chat("")
   ChatLib.chat(divider)
 }
 
@@ -205,11 +213,13 @@ export const viewChangeLog1_2_0 = () => {
   );
 
   ChatLib.chat(divider)
+  ChatLib.chat("")
   ChatLib.chat(`&dAutoWelcomeBack - &ev1.2.0 &d- Custom Users`)
   ChatLib.chat(users)
   ChatLib.chat(preview)
   ChatLib.chat(reorganized)
   ChatLib.chat(otherProjects)
+  ChatLib.chat("")
   ChatLib.chat(divider)
 }
 
@@ -225,10 +235,12 @@ export const viewChangeLog1_1_1 = () => {
   );
 
   ChatLib.chat(divider)
+  ChatLib.chat("")
   ChatLib.chat(`&dAutoWelcomeBack - &ev1.1.1`)
   ChatLib.chat(plusPlusEmojis)
   ChatLib.chat(rankGiftingEmojis)
   ChatLib.chat(bug)
+  ChatLib.chat("")
   ChatLib.chat(divider)
 }
 
@@ -245,10 +257,28 @@ export const viewChangeLog1_1_0 = () => {
   );
 
   ChatLib.chat(divider)
+  ChatLib.chat("")
   ChatLib.chat(`&dAutoWelcomeBack - &ev1.1.0 -&d GUI update`)
   ChatLib.chat(welcomeBackToggle)
   ChatLib.chat(welcomeBackStatus)
   ChatLib.chat(gui)
+  ChatLib.chat("")
   ChatLib.chat(divider)
 }
-3
+
+export const viewChangeLog1_0_0 = () => {
+  const welcomeBackToggle = new Message(
+    new TextComponent("&7Added &l/autowb toggle&r command &8(hover)").showHover("show_text", "will toggle the state of the auto wb")
+  );
+  const welcomeBackStatus = new Message(
+    new TextComponent("&7Added &l/autowb status&r command &8(hover)").showHover("show_text", "will show the current status of auto wb")
+  );
+
+  ChatLib.chat(divider)
+  ChatLib.chat("")
+  ChatLib.chat(`&dAutoWelcomeBack - &ev1.0.0`)
+  ChatLib.chat(welcomeBackToggle)
+  ChatLib.chat(welcomeBackStatus)
+  ChatLib.chat("")
+  ChatLib.chat(divider)
+}

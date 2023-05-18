@@ -71,5 +71,3 @@ A Simple Chat triggers module that allows you to welcome guild members back when
 - Added `/autowb status` command
 
 ## To-Do List
-
-- [ ] Support for friends
