@@ -22,6 +22,7 @@ A Simple Chat triggers module that allows you to welcome guild members back when
 - Moved everything to its own file for better backend
 - Added first join message
 - Changed spelling in most files
+- Added all the different change logs to the gui
 - Added Change log for when the module updates
 
 ### v1.2.3
