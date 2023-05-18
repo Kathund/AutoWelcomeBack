@@ -94,7 +94,8 @@ export const getUsername = (uuid) => axios.get(`https://sessionserver.mojang.com
 export const divider = "&a&m            &d&m            &e&m            &a&m            &d&m            &e&m            &a&m           &d&m           &e&m           &8";
 
 export const data = new PogObject("AutoWelcomeBack", {
-  "firstTimeMsg": false
+  "firstTimeMsg": false,
+  "updateMessage1_3_0": false
 }, "data/data.json")
 
 export const ShowFirstLoginMessage = () => {

@@ -45,6 +45,14 @@ class Settings {
   })
   messageDelay = 2000;
 
+  @SwitchProperty({
+    name: "Change Long",
+    description: "Shows the change log in chat when the module gets an update",
+    category: "Settings",
+    subcategory: "General"
+  })
+  changeLog = false;
+
   // ! Guild
   @SwitchProperty({
     name: "Toggle",
