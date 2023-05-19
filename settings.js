@@ -79,10 +79,8 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewGuildMessage() {
-    helperFunctions.getUsername(Player.getUUID()).then(playerName => {
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&4Udderly_cool &ejoined.&r`);
-      delay(this.messageDelay).then(() => ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &2[MVP&2-+&4] ${playerName}&r: ${helperFunctions.emojis(this.guildWelcomeBackMessage, "Udderly_cool")}&r`));
-    })
+    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&4Udderly_cool &ejoined.&r`);
+    delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildWelcomeBackMessage, "Udderly_cool")}&r`));
   };
 
   // ! Friends
@@ -127,9 +125,9 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewFriendsMessage() {
-    ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &dFriend > &r&4Udderly_cool &ejoined.&r`);
-    if (this.friendWelcomeBackMessageToggle) { delay(this.messageDelay).then(() => ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &dTo &2[MVP&2-+&4] Udderly_cool&7: &r${helperFunctions.emojis(this.friendWelcomeBackMessage, "Udderly_cool")}&r`)); }
-    if (this.friendBoopToggle) { delay(this.messageDelay + 20).then(() => ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &dTo &2[MVP&2-+&4] Udderly_cool&7: &r&r&d&lBoop!&r `)); }
+    ChatLib.chat(`&6AutoWB &d> &r &dFriend > &r&4Udderly_cool &ejoined.&r`);
+    if (this.friendWelcomeBackMessageToggle) { delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &dTo &2[MVP&2-+&4] Udderly_cool&7: &r${helperFunctions.emojis(this.friendWelcomeBackMessage, "Udderly_cool")}&r`)); }
+    if (this.friendBoopToggle) { delay(this.messageDelay + 20).then(() => ChatLib.chat(`&6AutoWB &d> &r &dTo &2[MVP&2-+&4] Udderly_cool&7: &r&r&d&lBoop!&r `)); }
   };
 
   // ! Emojis
@@ -491,10 +489,8 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewMessageUser1() {
-    helperFunctions.getUsername(Player.getUUID()).then(playerName => {
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&d${this.customUser1Name} &ejoined.&r`);
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.customUser1Message, this.customUser1Name)}&r`);
-    })
+    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser1Name} &ejoined.&r`);
+    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser1Message, this.customUser1Name)}&r`);
   };
 
   // ? user 2
@@ -525,10 +521,8 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewMessageUser2() {
-    helperFunctions.getUsername(Player.getUUID()).then(playerName => {
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&d${this.customUser2Name} &ejoined.&r`);
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.customUser2Message, this.customUser2Name)}&r`);
-    })
+    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser2Name} &ejoined.&r`);
+    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser2Message, this.customUser2Name)}&r`);
   };
 
   // ? user 3
@@ -559,10 +553,8 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewMessageUser3() {
-    helperFunctions.getUsername(Player.getUUID()).then(playerName => {
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&d${this.customUser3Name} &ejoined.&r`);
-      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.customUser3Message, this.customUser3Name)}&r`);
-    })
+    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser3Name} &ejoined.&r`);
+    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser3Message, this.customUser3Name)}&r`);
   };
 
   // ! Extra Info

@@ -1,6 +1,5 @@
 import PogObject from "../PogData/index"
 import Settings from "./settings";
-import axios from "../axios";
 const config = Settings
 
 export const emojis = function (text, username) {
@@ -89,8 +88,6 @@ export const removeColors = function (text) {
   return cleanText;
 }
 
-export const getUsername = (uuid) => axios.get(`https://sessionserver.mojang.com/session/minecraft/profile/${uuid}`).then(a => a.data.name).catch(e => { console.log(e) })
-
 export const divider = "&a&m            &d&m            &e&m            &a&m            &d&m            &e&m            &a&m           &d&m           &e&m           &8";
 
 export const data = new PogObject("AutoWelcomeBack", {
@@ -138,6 +135,9 @@ export const viewChangeLog1_3_0 = () => {
   const spelling = new Message(
     new TextComponent("&7Changed spelling in most files")
   );
+  const username = new Message(
+    new TextComponent("&7Changed the way usernames were gotten to improve performance")
+  );
 
   ChatLib.chat(divider)
   ChatLib.chat("")
@@ -148,6 +148,7 @@ export const viewChangeLog1_3_0 = () => {
   ChatLib.chat(firstInstallMessage)
   ChatLib.chat(changeLog)
   ChatLib.chat(spelling)
+  ChatLib.chat(username)
   ChatLib.chat("")
   ChatLib.chat(divider)
 }

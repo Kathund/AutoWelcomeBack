@@ -4,5 +4,5 @@
   "version": "1.3.0",
   "author": "Kath",
   "entry": "index.js",
-  "requires": ["Vigilance", "axios", "PromiseV2", "PogData"]
+  "requires": ["Vigilance", "PromiseV2", "PogData"]
 }
