@@ -121,7 +121,7 @@ export const ShowFirstLoginMessage = () => {
 
 export const viewChangeLog1_3_0 = () => {
   const customUsers = new Message(
-    new TextComponent("&7Added the option to have a different message than guild members")
+    new TextComponent("&7Added the option to have update 3 different users there own custom message")
   );
   const boop = new Message(
     new TextComponent("&7Added the option to boop the user")

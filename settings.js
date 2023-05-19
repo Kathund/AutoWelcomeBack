@@ -461,7 +461,9 @@ class Settings {
     category: "Custom Users",
     placeholder: ""
   })
-  emojiSnail() { };
+  warning() { };
+
+  // ? user 1
 
   @TextProperty({
     name: "Username",
@@ -492,6 +494,74 @@ class Settings {
     helperFunctions.getUsername(Player.getUUID()).then(playerName => {
       ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&d${this.customUser1Name} &ejoined.&r`);
       ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.customUser1Message, this.customUser1Name)}&r`);
+    })
+  };
+
+  // ? user 2
+
+  @TextProperty({
+    name: "Username",
+    description: "Custom message for set user - enter the person's username (case doesn't matter)",
+    category: "Custom Users",
+    subcategory: "User 2",
+    placeholder: Player.getName(),
+  })
+  customUser1Name = Player.getName();
+
+  @TextProperty({
+    name: 'Welcome Back message',
+    description: 'Set the message that will be sent in chat when the user joins hypixel',
+    category: 'Custom Users',
+    subcategory: "User 2",
+    placeholder: '{h/} Welcome Back {username}! {heart}',
+  })
+  customUser1Message = '{h/} Welcome Back {username}! {heart}';
+
+  @ButtonProperty({
+    name: "Preview",
+    description: "Shows a preview of your custom message",
+    category: "Custom Users",
+    subcategory: "User 2",
+    placeholder: `Show Example In Chat`
+  })
+  previewMessageUser2() {
+    helperFunctions.getUsername(Player.getUUID()).then(playerName => {
+      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&d${this.customUser2Name} &ejoined.&r`);
+      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.customUser2Message, this.customUser2Name)}&r`);
+    })
+  };
+
+  // ? user 3
+
+  @TextProperty({
+    name: "Username",
+    description: "Custom message for set user - enter the person's username (case doesn't matter)",
+    category: "Custom Users",
+    subcategory: "User 3",
+    placeholder: Player.getName(),
+  })
+  customUser1Name = Player.getName();
+
+  @TextProperty({
+    name: 'Welcome Back message',
+    description: 'Set the message that will be sent in chat when the user joins hypixel',
+    category: 'Custom Users',
+    subcategory: "User 3",
+    placeholder: '{h/} Welcome Back {username}! {heart}',
+  })
+  customUser1Message = '{h/} Welcome Back {username}! {heart}';
+
+  @ButtonProperty({
+    name: "Preview",
+    description: "Shows a preview of your custom message",
+    category: "Custom Users",
+    subcategory: "User 3",
+    placeholder: `Show Example In Chat`
+  })
+  previewMessageUser3() {
+    helperFunctions.getUsername(Player.getUUID()).then(playerName => {
+      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &r&d${this.customUser3Name} &ejoined.&r`);
+      ChatLib.chat(`&d[&6&lAutoWelcomeBack&d] &2Guild > &d[MVP&2-+&d] ${playerName}&r: ${helperFunctions.emojis(this.customUser3Message, this.customUser3Name)}&r`);
     })
   };
 
@@ -552,7 +622,7 @@ class Settings {
     placeholder: "Show In Chat"
   })
   changeLog1_3_0() {
-    helperFunctions.viewChangeLog1_3_0();    
+    helperFunctions.viewChangeLog1_3_0();
   };
 
   @ButtonProperty({
@@ -563,7 +633,7 @@ class Settings {
     placeholder: "Show In Chat"
   })
   changeLog1_2_3() {
-    helperFunctions.viewChangeLog1_2_3();    
+    helperFunctions.viewChangeLog1_2_3();
   };
 
   @ButtonProperty({
@@ -574,7 +644,7 @@ class Settings {
     placeholder: "Show In Chat"
   })
   changeLog1_2_2() {
-    helperFunctions.viewChangeLog1_2_2();    
+    helperFunctions.viewChangeLog1_2_2();
   };
 
   @ButtonProperty({
@@ -585,7 +655,7 @@ class Settings {
     placeholder: "Show In Chat"
   })
   changeLog1_2_1() {
-    helperFunctions.viewChangeLog1_2_1();    
+    helperFunctions.viewChangeLog1_2_1();
   };
 
   @ButtonProperty({
@@ -596,7 +666,7 @@ class Settings {
     placeholder: "Show In Chat"
   })
   changeLog1_2_0() {
-    helperFunctions.viewChangeLog1_2_0();    
+    helperFunctions.viewChangeLog1_2_0();
   };
 
   @ButtonProperty({
@@ -607,7 +677,7 @@ class Settings {
     placeholder: "Show In Chat"
   })
   changeLog1_1_1() {
-    helperFunctions.viewChangeLog1_1_1();    
+    helperFunctions.viewChangeLog1_1_1();
   };
 
   @ButtonProperty({
@@ -618,7 +688,7 @@ class Settings {
     placeholder: "Show In Chat"
   })
   changeLog1_1_0() {
-    helperFunctions.viewChangeLog1_1_0();    
+    helperFunctions.viewChangeLog1_1_0();
   };
 
   @ButtonProperty({
@@ -629,7 +699,7 @@ class Settings {
     placeholder: "Show In Chat"
   })
   changeLog1_0_0() {
-    helperFunctions.viewChangeLog1_0_0();    
+    helperFunctions.viewChangeLog1_0_0();
   };
 
   constructor() {
