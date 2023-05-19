@@ -138,6 +138,9 @@ export const viewChangeLog1_3_0 = () => {
   const username = new Message(
     new TextComponent("&7Changed the way usernames were gotten to improve performance")
   );
+  const memberJoin = new Message(
+    new TextComponent("&7Welcomes a user when the join the guild using a custom message")
+  );
 
   ChatLib.chat(divider)
   ChatLib.chat("")
@@ -149,6 +152,7 @@ export const viewChangeLog1_3_0 = () => {
   ChatLib.chat(changeLog)
   ChatLib.chat(spelling)
   ChatLib.chat(username)
+  ChatLib.chat(memberJoin)
   ChatLib.chat("")
   ChatLib.chat(divider)
 }

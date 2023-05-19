@@ -83,6 +83,37 @@ class Settings {
     delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildWelcomeBackMessage, "Udderly_cool")}&r`));
   };
 
+  // ? Member joining
+
+  @SwitchProperty({
+    name: "Guild Member Join Toggle",
+    description: "Toggles a message for when someone joins the guild",
+    category: "Guild",
+    subcategory: "Member Join"
+  })
+  guildMemberJoinToggle = true;
+
+  @TextProperty({
+    name: 'Welcome Message',
+    description: 'Set the message that will be sent in chat when the user joins the guild',
+    category: 'Guild',
+    subcategory: 'Member Join',
+    placeholder: '{wave} Welcome to the guild {username}! {heart}',
+  })
+  guildMemberJoinMessage = '{wave} Welcome to the guild {username}! {heart}';
+
+  @ButtonProperty({
+    name: "Preview",
+    description: "Shows a preview of your custom message for when someone joins the guild",
+    category: "Guild",
+    subcategory: "Member Join",
+    placeholder: `Show Example In Chat`
+  })
+  previewGuildMemberJoinMessage() {
+    ChatLib.chat(`&6AutoWB &d>&r &2[MVP&2-+&4] Udderly_Cool &r&ejoined the guild!`);
+    delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildMemberJoinMessage, "Udderly_cool")}`));
+  };
+
   // ! Friends
   @SwitchProperty({
     name: "Toggle",

@@ -7,6 +7,7 @@ register("command", () => config.openGUI()).setName("autowb");
 // ! Guild
 
 import './feature/guild/join.js';
+import './feature/guild/memberJoin.js';
 import './feature/guild/custom/1.js';
 import './feature/guild/custom/2.js';
 import './feature/guild/custom/3.js';

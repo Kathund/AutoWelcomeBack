@@ -25,6 +25,7 @@ A Simple Chat triggers module that allows you to welcome guild members back when
 - Added all the different change logs to the gui
 - Added Change log for when the module updates
 - Changed the way usernames were gotten to improve performance
+- Welcomes a user when the join the guild using a custom message
 
 ### v1.2.3
 
