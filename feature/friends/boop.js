@@ -10,6 +10,6 @@ register("chat", function (message, event) {
     if (config.friendBoopToggle) { delay(config.messageDelay + 200).then(() => ChatLib.command(`boop ${name}`)); }
   } catch (error) {
     console.log(error)
-    ChatLib.chat(`&6AutoWB &d> ${error}`)
+    ChatLib.chat(`&6AutoWB &d> &c${error}`)
   }
 }).setChatCriteria("&aFriend > &r${message} &r&ejoined.&r");

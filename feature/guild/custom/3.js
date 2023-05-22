@@ -13,6 +13,6 @@ register("chat", function (message, event) {
 
   } catch (error) {
     console.log(error)
-    ChatLib.chat(`&6AutoWB &d> ${error}`)
+    ChatLib.chat(`&6AutoWB &d> &c${error}`)
   }
 }).setChatCriteria("&2Guild > &r${message} &r&ejoined.&r");

@@ -12,6 +12,6 @@ register("chat", function (message, event) {
     delay(config.messageDelay).then(() => ChatLib.command(`gc ${helperFunctions.emojis(config.customUser1Message, name)}`));
   } catch (error) {
     console.log(error)
-    ChatLib.chat(`&6AutoWB &d> ${error}`)
+    ChatLib.chat(`&6AutoWB &d> &c${error}`)
   }
 }).setChatCriteria("&2Guild > &r${message} &r&ejoined.&r");

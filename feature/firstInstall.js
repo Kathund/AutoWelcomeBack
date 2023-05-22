@@ -6,6 +6,6 @@ register("step", () => {
     helperFunction.ShowFirstLoginMessage();
   } catch (error) {
     console.log(error)
-    ChatLib.chat(`&6AutoWB &d> ${error}`)
+    ChatLib.chat(`&6AutoWB &d> &c${error}`)
   }
 }).setFps(5)

@@ -84,7 +84,7 @@ class Settings {
       delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildWelcomeBackMessage, "Udderly_cool")}&r`));
     } catch (error) {
       console.log(error)
-      ChatLib.chat(`&6AutoWB &d> ${error}`)
+      ChatLib.chat(`&6AutoWB &d> &c${error}`)
     }
   };
 
@@ -120,7 +120,7 @@ class Settings {
       delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildMemberJoinMessage, "Udderly_cool")}`));
     } catch (error) {
       console.log(error)
-      ChatLib.chat(`&6AutoWB &d> ${error}`)
+      ChatLib.chat(`&6AutoWB &d> &c${error}`)
     }
   };
 
@@ -172,7 +172,7 @@ class Settings {
       if (this.friendBoopToggle) { delay(this.messageDelay + 20).then(() => ChatLib.chat(`&6AutoWB &d> &r &dTo &2[MVP&2-+&4] Udderly_cool&7: &r&r&d&lBoop!&r `)); }
     } catch (error) {
       console.log(error)
-      ChatLib.chat(`&6AutoWB &d> ${error}`)
+      ChatLib.chat(`&6AutoWB &d> &c${error}`)
     }
   };
 
@@ -540,7 +540,7 @@ class Settings {
       ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser1Message, this.customUser1Name)}&r`);
     } catch (error) {
       console.log(error)
-      ChatLib.chat(`&6AutoWB &d> ${error}`)
+      ChatLib.chat(`&6AutoWB &d> &c${error}`)
     }
   };
 
@@ -577,7 +577,7 @@ class Settings {
       ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser2Message, this.customUser2Name)}&r`);
     } catch (error) {
       console.log(error)
-      ChatLib.chat(`&6AutoWB &d> ${error}`)
+      ChatLib.chat(`&6AutoWB &d> &c${error}`)
     }
   };
 
@@ -614,7 +614,7 @@ class Settings {
       ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser3Message, this.customUser3Name)}&r`);
     } catch (error) {
       console.log(error)
-      ChatLib.chat(`&6AutoWB &d> ${error}`)
+      ChatLib.chat(`&6AutoWB &d> &c${error}`)
     }
   };
 
@@ -641,7 +641,7 @@ class Settings {
       ChatLib.command(`ct import kath`);
     } catch (error) {
       console.log(error)
-      ChatLib.chat(`&6AutoWB &d> ${error}`)
+      ChatLib.chat(`&6AutoWB &d> &c${error}`)
     }
   };
 

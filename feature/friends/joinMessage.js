@@ -11,6 +11,6 @@ register("chat", function (message, event) {
     if (config.friendWelcomeBackMessageToggle) { delay(config.messageDelay).then(() => ChatLib.command(`w ${name} ${helperFunctions.emojis(config.friendWelcomeBackMessage, name)}`)); }
   } catch (error) {
     console.log(error)
-    ChatLib.chat(`&6AutoWB &d> ${error}`)
+    ChatLib.chat(`&6AutoWB &d> &c${error}`)
   }
 }).setChatCriteria("&aFriend > &r${message} &r&ejoined.&r");

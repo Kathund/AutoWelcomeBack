@@ -16,6 +16,6 @@ register("chat", function (event) {
     delay(config.messageDelay).then(() => ChatLib.command(`gc ${helperFunctions.emojis(config.guildMemberJoinMessage, username)}`));
   } catch (error) {
     console.log(error)
-    ChatLib.chat(`&6AutoWB &d> ${error}`)
+    ChatLib.chat(`&6AutoWB &d> &c${error}`)
   }
 })
