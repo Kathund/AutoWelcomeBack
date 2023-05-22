@@ -1,9 +1,11 @@
 import * as helperFunction from "../helperFunctions.js";
 
-let checked = false;
 register("step", () => {
-  if (checked) return;
-  checked = true;
-  if (!helperFunction.data.firstTimeMsg) return;
-  helperFunction.ShowFirstLoginMessage();
+  try {
+    if (!helperFunction.data.firstTimeMsg) return;
+    helperFunction.ShowFirstLoginMessage();
+  } catch (error) {
+    console.log(error)
+    ChatLib.chat(`&6AutoWB &d> ${error}`)
+  }
 }).setFps(5)

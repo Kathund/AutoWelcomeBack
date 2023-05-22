@@ -79,8 +79,13 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewGuildMessage() {
-    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&4Udderly_cool &ejoined.&r`);
-    delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildWelcomeBackMessage, "Udderly_cool")}&r`));
+    try {
+      ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&4Udderly_cool &ejoined.&r`);
+      delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildWelcomeBackMessage, "Udderly_cool")}&r`));
+    } catch (error) {
+      console.log(error)
+      ChatLib.chat(`&6AutoWB &d> ${error}`)
+    }
   };
 
   // ? Member joining
@@ -110,8 +115,13 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewGuildMemberJoinMessage() {
-    ChatLib.chat(`&6AutoWB &d>&r &2[MVP&2-+&4] Udderly_Cool &r&ejoined the guild!`);
-    delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildMemberJoinMessage, "Udderly_cool")}`));
+    try {
+      ChatLib.chat(`&6AutoWB &d>&r &2[MVP&2-+&4] Udderly_Cool &r&ejoined the guild!`);
+      delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &2Guild > &2[MVP&2-+&4] ${Player.getName()}&r: ${helperFunctions.emojis(this.guildMemberJoinMessage, "Udderly_cool")}`));
+    } catch (error) {
+      console.log(error)
+      ChatLib.chat(`&6AutoWB &d> ${error}`)
+    }
   };
 
   // ! Friends
@@ -156,9 +166,14 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewFriendsMessage() {
-    ChatLib.chat(`&6AutoWB &d> &r &dFriend > &r&4Udderly_cool &ejoined.&r`);
-    if (this.friendWelcomeBackMessageToggle) { delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &dTo &2[MVP&2-+&4] Udderly_cool&7: &r${helperFunctions.emojis(this.friendWelcomeBackMessage, "Udderly_cool")}&r`)); }
-    if (this.friendBoopToggle) { delay(this.messageDelay + 20).then(() => ChatLib.chat(`&6AutoWB &d> &r &dTo &2[MVP&2-+&4] Udderly_cool&7: &r&r&d&lBoop!&r `)); }
+    try {
+      ChatLib.chat(`&6AutoWB &d> &r &dFriend > &r&4Udderly_cool &ejoined.&r`);
+      if (this.friendWelcomeBackMessageToggle) { delay(this.messageDelay).then(() => ChatLib.chat(`&6AutoWB &d> &r &dTo &2[MVP&2-+&4] Udderly_cool&7: &r${helperFunctions.emojis(this.friendWelcomeBackMessage, "Udderly_cool")}&r`)); }
+      if (this.friendBoopToggle) { delay(this.messageDelay + 20).then(() => ChatLib.chat(`&6AutoWB &d> &r &dTo &2[MVP&2-+&4] Udderly_cool&7: &r&r&d&lBoop!&r `)); }
+    } catch (error) {
+      console.log(error)
+      ChatLib.chat(`&6AutoWB &d> ${error}`)
+    }
   };
 
   // ! Emojis
@@ -520,8 +535,13 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewMessageUser1() {
-    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser1Name} &ejoined.&r`);
-    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser1Message, this.customUser1Name)}&r`);
+    try {
+      ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser1Name} &ejoined.&r`);
+      ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser1Message, this.customUser1Name)}&r`);
+    } catch (error) {
+      console.log(error)
+      ChatLib.chat(`&6AutoWB &d> ${error}`)
+    }
   };
 
   // ? user 2
@@ -533,7 +553,7 @@ class Settings {
     subcategory: "User 2",
     placeholder: Player.getName(),
   })
-  customUser1Name = Player.getName();
+  customUser2Name = Player.getName();
 
   @TextProperty({
     name: 'Welcome Back message',
@@ -542,7 +562,7 @@ class Settings {
     subcategory: "User 2",
     placeholder: '{h/} Welcome Back {username}! {heart}',
   })
-  customUser1Message = '{h/} Welcome Back {username}! {heart}';
+  customUser2Message = '{h/} Welcome Back {username}! {heart}';
 
   @ButtonProperty({
     name: "Preview",
@@ -552,8 +572,13 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewMessageUser2() {
-    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser2Name} &ejoined.&r`);
-    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser2Message, this.customUser2Name)}&r`);
+    try {
+      ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser2Name} &ejoined.&r`);
+      ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser2Message, this.customUser2Name)}&r`);
+    } catch (error) {
+      console.log(error)
+      ChatLib.chat(`&6AutoWB &d> ${error}`)
+    }
   };
 
   // ? user 3
@@ -565,7 +590,7 @@ class Settings {
     subcategory: "User 3",
     placeholder: Player.getName(),
   })
-  customUser1Name = Player.getName();
+  customUser3Name = Player.getName();
 
   @TextProperty({
     name: 'Welcome Back message',
@@ -574,7 +599,7 @@ class Settings {
     subcategory: "User 3",
     placeholder: '{h/} Welcome Back {username}! {heart}',
   })
-  customUser1Message = '{h/} Welcome Back {username}! {heart}';
+  customUser3Message = '{h/} Welcome Back {username}! {heart}';
 
   @ButtonProperty({
     name: "Preview",
@@ -584,8 +609,13 @@ class Settings {
     placeholder: `Show Example In Chat`
   })
   previewMessageUser3() {
-    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser3Name} &ejoined.&r`);
-    ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser3Message, this.customUser3Name)}&r`);
+    try {
+      ChatLib.chat(`&6AutoWB &d> &r &2Guild > &r&d${this.customUser3Name} &ejoined.&r`);
+      ChatLib.chat(`&6AutoWB &d> &r &2Guild > &d[MVP&2-+&d] ${Player.getName()}&r: ${helperFunctions.emojis(this.customUser3Message, this.customUser3Name)}&r`);
+    } catch (error) {
+      console.log(error)
+      ChatLib.chat(`&6AutoWB &d> ${error}`)
+    }
   };
 
   // ! Extra Info
@@ -600,14 +630,19 @@ class Settings {
   creditsVersion() { };
 
   @ButtonProperty({
-    name: "&1&lKath Addons",
+    name: "&1&lKath",
     description: `A ChatTriggers module that is designed for hypixel skyblock. It has QOL features read the features list for more info.`,
     category: "Extra Info",
     subcategory: "Other Projects",
     placeholder: "IMPORT"
   })
   importKathAddons() {
-    ChatLib.command(`ct import kath`);
+    try {
+      ChatLib.command(`ct import kath`);
+    } catch (error) {
+      console.log(error)
+      ChatLib.chat(`&6AutoWB &d> ${error}`)
+    }
   };
 
   @ButtonProperty({
