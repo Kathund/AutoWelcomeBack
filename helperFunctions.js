@@ -1,5 +1,5 @@
 import PogObject from "../PogData/index"
-import * as Settings  from "./settings";
+import * as Settings from "./settings";
 const config = Settings
 
 export const emojis = function (text, username) {
